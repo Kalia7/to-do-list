@@ -1,0 +1,128 @@
+*{
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    list-style: none;
+}
+
+:root{
+    --primary: #ff0043;
+    --secondary: #ea38a3;
+    --gray: #9b9b9b;
+}
+
+body{
+    background-color: #222222;
+    font-family: 'Roboto Mono', monospace;
+    color: white;
+
+}
+.container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 60vh;
+    font-size: 1.5rem;
+}
+.form__group{
+    position: relative;
+    padding: 15px 0 0;
+    margin-top: 10px;
+    width: 50%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.form__field{
+    border-bottom: 2px solid var(--gray);
+    font-size: 1.3rem;
+    color: white;
+    padding: 7px 0;
+    background: transparent;
+    transition: border-color .2s;
+}
+.form__field::placeholder{
+    color: transparent;
+}
+.form__label{
+    position: absolute;
+    top: 0;
+    display: block;
+    margin-top: 13px;
+    transition: 0.2s;
+    font-size: 1.3rem;
+    color: var(--gray);
+}
+.form__field:focus:required:invalid{
+    padding-bottom: 6px;
+    font-weight: 700;
+    border-width: 3px;
+    border-image: linear-gradient(to right, var(--primary), var(--secondary));
+    border-image-slice: 1;
+}
+.form__field:required:invalid + .form__label::before{
+    content: '';
+}
+.form__field:focus + .form__label,
+.form__field:not(:placeholder-shown) + .form__label{
+    font-size: 1rem;
+    font-weight: 700;
+    margin-top: 0;
+    color: var(--primary);
+}
+.form__btn{
+    background: transparent;
+    border: none;
+    padding: 0.5rem;
+    margin-top: 9px;
+    margin-left: 7px;
+    cursor: pointer;
+}
+.form__btn > .fa-plus{
+    color: var(--gray);
+}
+.form__btn:hover > .fa-plus{
+    color: var(--primary);
+    transition: 0.2s;
+}
+.container__tesk{
+    display: flex;
+    align-items: center;
+}
+.list__tesk{
+    min-width: 30%;
+}
+
+.todo{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0.5rem;
+    color: var(--gray);
+    transition: all 0.5s asset;
+}
+.todo li{
+    flex: 1;
+}
+.complet__btn,
+.delete__btn{
+    background: transparent;
+    color: var(--gray);
+    border: none;
+    padding: 1rem;
+    cursor: pointer;
+    font-size: 1rem;
+}
+.complet__btn:hover{
+    color: var(--secondary);
+}
+.delete__btn:hover{
+    color: var(--primary);
+}
+.completed{
+    text-decoration: line-through;
+    opacity: 0.5;
+}
