@@ -1,5 +1,3 @@
-- [To-do List](https://kalia7.github.io/to-do-list/)
-
 ## To-do List
 
 O desafio de projeto consiste em fazer uma lista de tarefas, onde se pode adicionar, remover e também marcar como completa uma atividade. 
